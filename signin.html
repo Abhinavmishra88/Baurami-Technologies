@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | Baurami Technologies</title>
+
+    <!-- Shared Authentication CSS -->
+    <link rel="stylesheet" href="Styles/auth.css">
+</head>
+
+<body>
+
+    <main class="auth-card">
+
+        <!-- LEFT BRANDING PANEL -->
+
+        <section class="brand-panel">
+
+            <div class="brand-logo">
+                <div class="logo-box">B</div>
+
+                <h2>
+                    Baurami<br>
+                    Technologies
+                </h2>
+            </div>
+
+            <div class="tagline">
+                INNOVATE • BUILD • GROW
+            </div>
+
+            <div class="brand-content">
+
+                <h1>
+                    Welcome Back to
+                    <span>Baurami Technologies</span>
+                </h1>
+
+                <p>
+                    Sign in to continue exploring our innovative
+                    solutions and be a part of a smarter digital world.
+                </p>
+
+                <div class="feature">
+
+                    <div class="feature-icon">🚀</div>
+
+                    <div>
+                        <h3>Modern Solutions</h3>
+                        <p>Innovative and scalable</p>
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">👥</div>
+
+                    <div>
+                        <h3>Expert Team</h3>
+                        <p>Driven by expertise</p>
+                    </div>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">🛡</div>
+
+                    <div>
+                        <h3>Secure & Reliable</h3>
+                        <p>Your data, our priority</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="brand-footer">
+                © <span id="year"></span> Baurami Technologies
+                <br>
+                All rights reserved.
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIGN IN PANEL -->
+
+        <section class="form-panel">
+
+            <div class="secure-label">
+                🔒 &nbsp; Secure Login
+            </div>
+
+            <div class="form-heading">
+
+                <span>ACCOUNT ACCESS</span>
+
+                <h2>Sign In</h2>
+
+                <p>Enter your account details to continue.</p>
+
+            </div>
+
+
+            <!-- SIGN IN FORM -->
+
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                        <span class="field-icon">✉</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="password-input"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            id="togglePassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REMEMBER ME AND FORGOT PASSWORD -->
+
+                <div class="login-options">
+
+                    <label class="remember-option">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a
+                        href="forgot-password.html"
+                        class="forgot-link"
+                    >
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- SIGN IN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Sign In →
+                </button>
+
+
+                <!-- SOCIAL LOGIN -->
+
+                <div class="divider">
+                    or continue with
+                </div>
+
+                <div class="social-buttons">
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="Google"
+                    >
+                        G
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="GitHub"
+                    >
+                        GH
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        aria-label="LinkedIn"
+                    >
+                        in
+                    </button>
+
+                </div>
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <div class="account-link">
+
+                    Don't have an account?
+
+                    <a href="signup.html">
+                        Create Account
+                    </a>
+
+                </div>
+
+
+                <!-- BACK TO HOME -->
+
+                <a href="index.html" class="back-home">
+                    ← Back to Home
+                </a>
+
+
+                <!-- FORM MESSAGE -->
+
+                <p
+                    class="form-message"
+                    id="loginMessage"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- SIGN IN JAVASCRIPT -->
+
+   <script type="module" src="js/signin.js"></script>
+
+</body>
+</html>

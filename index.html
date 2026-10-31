@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Baurami Technologies | Innovate Build Grow</title>
+
+    <meta
+      name="description"
+      content="Baurami Technologies builds modern websites, mobile applications and software solutions."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <header class="header">
+      <nav class="navbar">
+        <a href="#home" class="logo">
+          <span class="logo-icon">B</span>
+          <span class="logo-text">
+            Baurami
+            <strong>Technologies</strong>
+            <small>INNOVATE · BUILD · GROW</small>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+
+          <!-- Logged out -->
+          <div class="auth-nav logged-out-nav" data-auth="logged-out">
+            <a href="signin.html" class="nav-login">Sign In</a>
+            <a href="signup.html" class="nav-signup">Sign Up</a>
+          </div>
+
+          <!-- Logged in: Dashboard only -->
+          <div
+            class="auth-nav logged-in-nav"
+            data-auth="logged-in"
+            style="display: none"
+          >
+            <a href="dashboard.html" class="nav-dashboard">
+              <i class="fas fa-th-large"></i>
+              Dashboard
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-tag"> IDEAS TO IMPACT </span>
+
+          <h1>
+            Building
+            <span>Digital Solutions</span>
+            for a Better Tomorrow
+          </h1>
+
+          <p>
+            We help businesses transform their ideas into modern websites,
+            mobile applications, and software solutions with creativity,
+            technology and a user-first mindset.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">
+              Our Services
+              <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <a href="#projects" class="btn btn-outline"> View Projects </a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <h3>50+</h3>
+              <span>Projects Delivered</span>
+            </div>
+
+            <div>
+              <h3>30+</h3>
+              <span>Happy Clients</span>
+            </div>
+
+            <div>
+              <h3>3+</h3>
+              <span>Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO IMAGE -->
+        <div class="hero-image">
+          <img
+            src="assets/baurami-hero-workspace.jpg"
+            alt="Developer working at a modern Baurami Technologies workspace"
+          />
+        </div>
+      </div>
+
+      <!-- FEATURE CARDS -->
+      <div class="hero-services">
+        <article class="hero-service-card">
+          <div class="hero-service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div>
+            <h3>Web Development</h3>
+            <p>Modern, responsive and SEO-friendly websites.</p>
+          </div>
+        </article>
+
+        <article class="hero-service-card">
+          <div class="hero-service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div>
+            <h3>Mobile App Development</h3>
+            <p>User-friendly applications for Android and iOS.</p>
+          </div>
+        </article>
+
+        <article class="hero-service-card">
+          <div class="hero-service-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div>
+            <h3>Software Development</h3>
+            <p>Custom software solutions for your business.</p>
+          </div>
+        </article>
+
+        <article class="hero-service-card">
+          <div class="hero-service-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <div>
+            <h3>UI/UX Design</h3>
+            <p>Clean, attractive and intuitive user experiences.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section-padding" id="about">
+      <div class="about-container">
+        <div class="about-image">
+          <img
+            src="assets/baurami-about-team.png"
+            alt="Baurami Technologies team collaborating in a modern office"
+          />
+        </div>
+
+        <div class="about-content">
+          <span class="section-tag">ABOUT OUR COMPANY</span>
+
+          <h2>
+            Building Technology.
+            <span>Creating Possibilities.</span>
+          </h2>
+
+          <h3>Innovating for a Digital Future</h3>
+
+          <p>
+            Baurami Technologies focuses on creating modern, reliable and
+            user-friendly digital solutions for businesses and individuals.
+          </p>
+
+          <p>
+            Our goal is to transform ideas into practical technology solutions
+            through creativity, quality development and continuous improvement.
+          </p>
+
+          <div class="about-points">
+            <div><i class="fas fa-check"></i> Modern Web Development</div>
+            <div><i class="fas fa-check"></i> Creative Solutions</div>
+            <div><i class="fas fa-check"></i> Reliable Technology</div>
+            <div><i class="fas fa-check"></i> User-Friendly Design</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section-padding" id="services">
+      <div class="section-heading">
+        <span class="section-tag">WHAT WE OFFER</span>
+
+        <h2>Our Professional <span>Services</span></h2>
+
+        <p>
+          Digital services designed to help businesses build, grow and succeed.
+        </p>
+      </div>
+
+      <div class="services-container">
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>
+            Modern, responsive and professional websites designed for your
+            business.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Software Development</h3>
+          <p>
+            Customized software solutions to simplify your business operations.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Application Development</h3>
+          <p>
+            User-friendly applications built for modern platforms and devices.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>
+            Attractive, clean and intuitive interfaces that improve user
+            experience.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Backend Development</h3>
+          <p>
+            Secure backend systems, database integration and API development.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Digital Solutions</h3>
+          <p>
+            Reliable technology solutions designed around your requirements.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects section-padding" id="projects">
+      <div class="section-heading">
+        <span class="section-tag">OUR PORTFOLIO</span>
+
+        <h2>Explore Our <span>Projects</span></h2>
+
+        <p>Discover our work and the digital solutions we have developed.</p>
+      </div>
+
+      <div class="projects-container">
+        <article class="project-card">
+          <div class="project-image project-image-one">
+            <i class="fas fa-store"></i>
+          </div>
+
+          <div class="project-info">
+            <span class="project-category">Marketplace</span>
+            <h3>LocalKart</h3>
+            <p>
+              A hyperlocal marketplace connecting neighborhood sellers with
+              nearby customers.
+            </p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image project-image-two">
+            <i class="fas fa-bolt"></i>
+          </div>
+
+          <div class="project-info">
+            <span class="project-category">Web Application</span>
+            <h3>Mishra Electro</h3>
+            <p>
+              An electronics-focused web project with a modern interface and
+              backend functionality.
+            </p>
+            <div class="project-tech">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>Backend</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image project-image-three">
+            <i class="fas fa-laptop"></i>
+          </div>
+
+          <div class="project-info">
+            <span class="project-category">Company Website</span>
+            <h3>Baurami Technologies</h3>
+            <p>
+              A professional company website showcasing services and digital
+              solutions.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us section-padding">
+      <div class="section-heading">
+        <span class="section-tag">WHY CHOOSE US</span>
+
+        <h2>Technology With <span>Purpose</span></h2>
+
+        <p>We focus on quality, creativity and reliable digital experiences.</p>
+      </div>
+
+      <div class="features-container">
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>Modern Solutions</h3>
+          <p>
+            We use modern technologies to create scalable digital solutions.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Customer Focus</h3>
+          <p>
+            We focus on understanding requirements and delivering useful
+            solutions.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Reliable Development</h3>
+          <p>We value quality, reliability and continuous improvement.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section-padding" id="contact">
+      <div class="section-heading">
+        <span class="section-tag">GET IN TOUCH</span>
+
+        <h2>
+          Let's Build Something
+          <span>Great Together</span>
+        </h2>
+
+        <p>Have an idea or project in mind? Contact Baurami Technologies.</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+
+          <p>
+            We would love to hear about your ideas and discuss how technology
+            can help.
+          </p>
+
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <span>Contact email coming soon</span>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-globe"></i>
+            <span>Baurami Technologies</span>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <span>Monday – Saturday</span>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input
+              type="text"
+              id="contactName"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input
+              type="text"
+              id="contactSubject"
+              name="subject"
+              placeholder="Enter subject"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              rows="5"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Send Message
+            <i class="fas fa-paper-plane"></i>
+          </button>
+
+          <p
+            id="contactFormMessage"
+            class="form-message"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-icon">B</span>
+            <span class="logo-text">
+              Baurami
+              <strong>Technologies</strong>
+            </span>
+          </a>
+
+          <p>
+            Innovating, building and growing through modern digital solutions.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-links">
+          <h3>Our Services</h3>
+          <a href="#services">Web Development</a>
+          <a href="#services">Mobile Applications</a>
+          <a href="#services">Software Development</a>
+          <a href="#services">UI/UX Design</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="footerYear"></span>
+          Baurami Technologies. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WEBSITE JAVASCRIPT -->
+    <script src="script.js"></script>
+
+    <!-- FIREBASE AUTHENTICATION STATE -->
+    <script type="module" src="js/auth-state.js"></script>
+  </body>
+</html>
