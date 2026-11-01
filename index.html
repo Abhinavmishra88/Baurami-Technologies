@@ -1,561 +1,1018 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Baurami Technologies | Innovate Build Grow</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-      name="description"
-      content="Baurami Technologies builds modern websites, mobile applications and software solutions."
-    />
+    <title>Baurami Technologies | Digital Solutions</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="Baurami Technologies builds modern websites, software solutions and digital experiences.">
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero-reference.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <body>
-    <!-- NAVIGATION -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CONTACT SECTION ONLY: LIGHT PREMIUM DESIGN -->
+    <style>
+        #contact.contact {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 52%, #ffffff 100%);
+        }
+
+        #contact.contact::before,
+        #contact.contact::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        #contact.contact::before {
+            width: 360px;
+            height: 360px;
+            top: -170px;
+            left: -120px;
+            background: rgba(96, 165, 250, .13);
+        }
+
+        #contact.contact::after {
+            width: 420px;
+            height: 420px;
+            right: -170px;
+            bottom: -210px;
+            background: rgba(37, 99, 235, .09);
+        }
+
+        #contact .contact-heading {
+            max-width: 720px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        #contact .contact-heading .section-tag {
+            display: inline-flex;
+            margin-bottom: 12px;
+            padding: 9px 15px;
+            border: 1px solid #dbeafe;
+            border-radius: 30px;
+            color: #2563eb;
+            background: #fff;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+        }
+
+        #contact .contact-heading h2 {
+            margin: 10px 0 14px;
+            color: #142b4d;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -1.4px;
+        }
+
+        #contact .contact-heading h2 span {
+            color: #3478e5;
+        }
+
+        #contact .contact-heading p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        #contact .contact-container {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: .88fr 1.12fr;
+            gap: 0;
+            overflow: hidden;
+            border: 1px solid #e4edfa;
+            border-radius: 26px;
+            background: #fff;
+            box-shadow: 0 24px 65px rgba(30, 64, 120, .10);
+        }
+
+        #contact .contact-info {
+            padding: 48px 42px;
+            border: 0;
+            border-right: 1px solid #e5edf8;
+            border-radius: 0;
+            background: linear-gradient(150deg, #f0f6ff, #e8f1ff);
+            box-shadow: none;
+        }
+
+        #contact .contact-label,
+        #contact .form-small-tag {
+            color: #3478e5;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+        }
+
+        #contact .contact-info h3 {
+            margin: 17px 0 14px;
+            color: #142b4d;
+            font-size: clamp(27px, 3vw, 34px);
+            line-height: 1.2;
+        }
+
+        #contact .contact-description {
+            margin: 0 0 34px;
+            color: #62738d;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        #contact .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 23px;
+        }
+
+        #contact .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 0;
+        }
+
+        #contact .contact-icon {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            display: grid;
+            place-items: center;
+            color: #3478e5;
+            background: #fff;
+            border: 1px solid #e1ebfa;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, .07);
+        }
+
+        #contact .contact-detail h4 {
+            margin: 0 0 5px;
+            color: #1e3557;
+            font-size: 14px;
+            font-weight: 750;
+        }
+
+        #contact .contact-detail p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        #contact .contact-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 38px;
+            padding: 14px 15px;
+            color: #41618d;
+            background: rgba(255, 255, 255, .7);
+            border: 1px solid #fff;
+            border-radius: 13px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        #contact .contact-note i {
+            color: #3478e5;
+        }
+
+        #contact .contact-form-wrapper {
+            min-width: 0;
+            padding: 48px 46px;
+            background: #fff;
+        }
+
+        #contact .form-heading {
+            margin-bottom: 28px;
+        }
+
+        #contact .form-heading h3 {
+            margin: 9px 0 7px;
+            color: #142b4d;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        #contact .form-heading p {
+            margin: 0;
+            color: #718096;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        #contact .contact-form {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        #contact .contact-form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        #contact .form-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            margin-bottom: 18px;
+        }
+
+        #contact .form-group label {
+            margin-bottom: 8px;
+            color: #344967;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        #contact .form-group input,
+        #contact .form-group textarea {
+            width: 100%;
+            min-width: 0;
+            padding: 13px 14px;
+            color: #1e3557;
+            background: #f9fbfe;
+            border: 1px solid #dce6f2;
+            border-radius: 11px;
+            outline: none;
+            font: inherit;
+            font-size: 13px;
+            transition: .2s ease;
+        }
+
+        #contact .form-group input {
+            min-height: 48px;
+        }
+
+        #contact .form-group textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        #contact .form-group input::placeholder,
+        #contact .form-group textarea::placeholder {
+            color: #9aa9bc;
+        }
+
+        #contact .form-group input:focus,
+        #contact .form-group textarea:focus {
+            background: #fff;
+            border-color: #6da2f4;
+            box-shadow: 0 0 0 4px rgba(52, 120, 229, .10);
+        }
+
+        #contact .contact-submit {
+            width: 100%;
+            min-height: 49px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 25px;
+            color: #fff;
+            background: linear-gradient(110deg, #4389ee, #2563d9);
+            border: 0;
+            border-radius: 11px;
+            font: inherit;
+            font-size: 13px;
+            font-weight: 750;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(37, 99, 219, .19);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        #contact .contact-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37, 99, 219, .25);
+        }
+
+        #contact .contact-submit i {
+            transition: transform .2s ease;
+        }
+
+        #contact .contact-submit:hover i {
+            transform: translateX(4px);
+        }
+
+        #contact #contactFormMessage {
+            margin-top: 13px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        #contact #contactFormMessage:empty {
+            display: none;
+        }
+
+        @media (max-width: 850px) {
+            #contact .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            #contact .contact-info {
+                border-right: 0;
+                border-bottom: 1px solid #e5edf8;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #contact.contact {
+                padding: 70px 5%;
+            }
+
+            #contact .contact-heading {
+                margin-bottom: 32px;
+            }
+
+            #contact .contact-heading h2 {
+                font-size: 32px;
+            }
+
+            #contact .contact-heading p {
+                font-size: 13px;
+            }
+
+            #contact .contact-info,
+            #contact .contact-form-wrapper {
+                padding: 32px 23px;
+            }
+
+            #contact .contact-form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
     <header class="header">
-      <nav class="navbar">
-        <a href="#home" class="logo">
-          <span class="logo-icon">B</span>
-          <span class="logo-text">
-            Baurami
-            <strong>Technologies</strong>
-            <small>INNOVATE · BUILD · GROW</small>
-          </span>
-        </a>
+        <nav class="navbar">
 
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
+            <a href="#home" class="logo">
+                <span class="logo-icon">B</span>
 
-        <div class="nav-menu" id="navMenu">
-          <a href="#home" class="nav-link active">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#contact" class="nav-link">Contact</a>
-
-          <!-- Logged out -->
-          <div class="auth-nav logged-out-nav" data-auth="logged-out">
-            <a href="signin.html" class="nav-login">Sign In</a>
-            <a href="signup.html" class="nav-signup">Sign Up</a>
-          </div>
-
-          <!-- Logged in: Dashboard only -->
-          <div
-            class="auth-nav logged-in-nav"
-            data-auth="logged-in"
-            style="display: none"
-          >
-            <a href="dashboard.html" class="nav-dashboard">
-              <i class="fas fa-th-large"></i>
-              Dashboard
+                <span class="logo-copy">
+                    <strong>Baurami<br><em>Technologies</em></strong>
+                    <small>INNOVATE · BUILD · GROW</small>
+                </span>
             </a>
-          </div>
-        </div>
-      </nav>
+
+            <button type="button"
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navMenu">
+
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+
+                <div class="auth-nav logged-out-nav" data-auth="logged-out">
+                    <a href="signup.html" class="nav-signup">
+                        Get Started
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="auth-nav logged-in-nav"
+                    data-auth="logged-in"
+                    style="display:none;">
+
+                    <a href="dashboard.html" class="nav-dashboard">
+                        <i class="fas fa-th-large"></i>
+                        Dashboard
+                    </a>
+                </div>
+
+            </div>
+        </nav>
     </header>
 
+
     <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="hero-container">
-        <div class="hero-content">
-          <span class="hero-tag"> IDEAS TO IMPACT </span>
 
-          <h1>
-            Building
-            <span>Digital Solutions</span>
-            for a Better Tomorrow
-          </h1>
+    <section class="hero hero-reference" id="home">
 
-          <p>
-            We help businesses transform their ideas into modern websites,
-            mobile applications, and software solutions with creativity,
-            technology and a user-first mindset.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#services" class="btn btn-primary">
-              Our Services
-              <i class="fas fa-arrow-right"></i>
-            </a>
-
-            <a href="#projects" class="btn btn-outline"> View Projects </a>
-          </div>
-
-          <div class="hero-stats">
-            <div>
-              <h3>50+</h3>
-              <span>Projects Delivered</span>
-            </div>
-
-            <div>
-              <h3>30+</h3>
-              <span>Happy Clients</span>
-            </div>
-
-            <div>
-              <h3>3+</h3>
-              <span>Years Experience</span>
-            </div>
-          </div>
+        <div class="hero-photo" aria-hidden="true">
+            <img src="assets/baurami-hero-workspace.jpg"
+                alt=""
+                fetchpriority="high">
         </div>
 
-        <!-- HERO IMAGE -->
-        <div class="hero-image">
-          <img
-            src="assets/baurami-hero-workspace.jpg"
-            alt="Developer working at a modern Baurami Technologies workspace"
-          />
+        <div class="hero-inner">
+
+            <div class="hero-content">
+
+                <span class="hero-eyebrow">
+                    TECHNOLOGY · CREATIVITY · REAL IMPACT
+                </span>
+
+                <h1>
+                    Turning Ideas<br>
+                    into <span>Digital<br>Realities</span>
+                </h1>
+
+                <p>
+                    We build modern websites, mobile applications
+                    and software solutions that help businesses
+                    grow in the digital world.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        Explore Our Work
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#about" class="btn btn-outline">
+                        Learn More
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <h3>50+</h3>
+                        <span>Projects Delivered</span>
+                    </div>
+
+                    <div>
+                        <h3>30+</h3>
+                        <span>Happy Clients</span>
+                    </div>
+
+                    <div>
+                        <h3>3+</h3>
+                        <span>Years Experience</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-
-      <!-- FEATURE CARDS -->
-      <div class="hero-services">
-        <article class="hero-service-card">
-          <div class="hero-service-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <div>
-            <h3>Web Development</h3>
-            <p>Modern, responsive and SEO-friendly websites.</p>
-          </div>
-        </article>
-
-        <article class="hero-service-card">
-          <div class="hero-service-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <div>
-            <h3>Mobile App Development</h3>
-            <p>User-friendly applications for Android and iOS.</p>
-          </div>
-        </article>
-
-        <article class="hero-service-card">
-          <div class="hero-service-icon">
-            <i class="fas fa-cog"></i>
-          </div>
-          <div>
-            <h3>Software Development</h3>
-            <p>Custom software solutions for your business.</p>
-          </div>
-        </article>
-
-        <article class="hero-service-card">
-          <div class="hero-service-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <div>
-            <h3>UI/UX Design</h3>
-            <p>Clean, attractive and intuitive user experiences.</p>
-          </div>
-        </article>
-      </div>
     </section>
+
 
     <!-- ABOUT SECTION -->
+
     <section class="about section-padding" id="about">
-      <div class="about-container">
-        <div class="about-image">
-          <img
-            src="assets/baurami-about-team.png"
-            alt="Baurami Technologies team collaborating in a modern office"
-          />
+
+        <div class="about-container">
+
+            <div class="about-image">
+                <div class="about-visual">
+
+                    <img
+                        src="assets/baurami-about-team.png"
+                        alt="Baurami Technologies professional workspace"
+                        loading="lazy"
+                    >
+
+                    <div class="about-image-badge">
+                        <span class="badge-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+
+                        <div>
+                            <h4>Creative Solutions</h4>
+                            <p>Technology that drives growth</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="about-content">
+
+                <span class="section-tag">ABOUT BAURAMI</span>
+
+                <h2>
+                    We Turn Your Ideas Into
+                    <span>Digital Experiences</span>
+                </h2>
+
+                <p>
+                    Baurami Technologies focuses on building modern,
+                    reliable and user-friendly digital solutions.
+                    We combine creativity and technology to help
+                    businesses grow and succeed in the digital world.
+                </p>
+
+                <p>
+                    From responsive websites to software applications,
+                    our goal is to create solutions that deliver
+                    meaningful results.
+                </p>
+
+                <div class="about-features">
+
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Modern Technology</span>
+                    </div>
+
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Creative Solutions</span>
+                    </div>
+
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>User-Focused Design</span>
+                    </div>
+
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Reliable Development</span>
+                    </div>
+
+                </div>
+
+                <a href="#contact" class="btn btn-primary">
+                    Get In Touch
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="about-content">
-          <span class="section-tag">ABOUT OUR COMPANY</span>
-
-          <h2>
-            Building Technology.
-            <span>Creating Possibilities.</span>
-          </h2>
-
-          <h3>Innovating for a Digital Future</h3>
-
-          <p>
-            Baurami Technologies focuses on creating modern, reliable and
-            user-friendly digital solutions for businesses and individuals.
-          </p>
-
-          <p>
-            Our goal is to transform ideas into practical technology solutions
-            through creativity, quality development and continuous improvement.
-          </p>
-
-          <div class="about-points">
-            <div><i class="fas fa-check"></i> Modern Web Development</div>
-            <div><i class="fas fa-check"></i> Creative Solutions</div>
-            <div><i class="fas fa-check"></i> Reliable Technology</div>
-            <div><i class="fas fa-check"></i> User-Friendly Design</div>
-          </div>
-        </div>
-      </div>
     </section>
+
 
     <!-- SERVICES SECTION -->
+
     <section class="services section-padding" id="services">
-      <div class="section-heading">
-        <span class="section-tag">WHAT WE OFFER</span>
 
-        <h2>Our Professional <span>Services</span></h2>
+        <div class="section-heading">
 
-        <p>
-          Digital services designed to help businesses build, grow and succeed.
-        </p>
-      </div>
+            <span class="section-tag">WHAT WE DO</span>
 
-      <div class="services-container">
-        <article class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Web Development</h3>
-          <p>
-            Modern, responsive and professional websites designed for your
-            business.
-          </p>
-        </article>
+            <h2>Our <span>Services</span></h2>
 
-        <article class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <h3>Software Development</h3>
-          <p>
-            Customized software solutions to simplify your business operations.
-          </p>
-        </article>
+            <p>
+                Technology solutions designed to help your business
+                move forward.
+            </p>
 
-        <article class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <h3>Application Development</h3>
-          <p>
-            User-friendly applications built for modern platforms and devices.
-          </p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-paint-brush"></i>
-          </div>
-          <h3>UI/UX Design</h3>
-          <p>
-            Attractive, clean and intuitive interfaces that improve user
-            experience.
-          </p>
-        </article>
+        <div class="services-container">
 
-        <article class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-database"></i>
-          </div>
-          <h3>Backend Development</h3>
-          <p>
-            Secure backend systems, database integration and API development.
-          </p>
-        </article>
+            <article class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
 
-        <article class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Digital Solutions</h3>
-          <p>
-            Reliable technology solutions designed around your requirements.
-          </p>
-        </article>
-      </div>
+                <h3>Web Development</h3>
+
+                <p>
+                    Responsive, modern and professional websites
+                    designed to provide an excellent user experience.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+
+                <h3>Mobile App Development</h3>
+
+                <p>
+                    User-friendly mobile applications built
+                    for Android and iOS platforms.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+                <h3>Software Development</h3>
+
+                <p>
+                    Custom software solutions that simplify
+                    business processes and improve productivity.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+
+                <h3>UI/UX Design</h3>
+
+                <p>
+                    Clean and attractive interfaces focused
+                    on usability and customer satisfaction.
+                </p>
+            </article>
+
+        </div>
+
     </section>
+
 
     <!-- PROJECTS SECTION -->
+
     <section class="projects section-padding" id="projects">
-      <div class="section-heading">
-        <span class="section-tag">OUR PORTFOLIO</span>
 
-        <h2>Explore Our <span>Projects</span></h2>
+        <div class="section-heading">
 
-        <p>Discover our work and the digital solutions we have developed.</p>
-      </div>
+            <span class="section-tag">OUR PORTFOLIO</span>
 
-      <div class="projects-container">
-        <article class="project-card">
-          <div class="project-image project-image-one">
-            <i class="fas fa-store"></i>
-          </div>
+            <h2>Featured <span>Projects</span></h2>
 
-          <div class="project-info">
-            <span class="project-category">Marketplace</span>
-            <h3>LocalKart</h3>
             <p>
-              A hyperlocal marketplace connecting neighborhood sellers with
-              nearby customers.
+                Explore some of the work and digital solutions
+                developed with creativity and technology.
             </p>
-            <div class="project-tech">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>MongoDB</span>
-            </div>
-          </div>
-        </article>
 
-        <article class="project-card">
-          <div class="project-image project-image-two">
-            <i class="fas fa-bolt"></i>
-          </div>
-
-          <div class="project-info">
-            <span class="project-category">Web Application</span>
-            <h3>Mishra Electro</h3>
-            <p>
-              An electronics-focused web project with a modern interface and
-              backend functionality.
-            </p>
-            <div class="project-tech">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>Backend</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-image project-image-three">
-            <i class="fas fa-laptop"></i>
-          </div>
-
-          <div class="project-info">
-            <span class="project-category">Company Website</span>
-            <h3>Baurami Technologies</h3>
-            <p>
-              A professional company website showcasing services and digital
-              solutions.
-            </p>
-            <div class="project-tech">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="why-us section-padding">
-      <div class="section-heading">
-        <span class="section-tag">WHY CHOOSE US</span>
-
-        <h2>Technology With <span>Purpose</span></h2>
-
-        <p>We focus on quality, creativity and reliable digital experiences.</p>
-      </div>
-
-      <div class="features-container">
-        <article class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h3>Modern Solutions</h3>
-          <p>
-            We use modern technologies to create scalable digital solutions.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3>Customer Focus</h3>
-          <p>
-            We focus on understanding requirements and delivering useful
-            solutions.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-lock"></i>
-          </div>
-          <h3>Reliable Development</h3>
-          <p>We value quality, reliability and continuous improvement.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact section-padding" id="contact">
-      <div class="section-heading">
-        <span class="section-tag">GET IN TOUCH</span>
-
-        <h2>
-          Let's Build Something
-          <span>Great Together</span>
-        </h2>
-
-        <p>Have an idea or project in mind? Contact Baurami Technologies.</p>
-      </div>
-
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-
-          <p>
-            We would love to hear about your ideas and discuss how technology
-            can help.
-          </p>
-
-          <div class="contact-detail">
-            <i class="fas fa-envelope"></i>
-            <span>Contact email coming soon</span>
-          </div>
-
-          <div class="contact-detail">
-            <i class="fas fa-globe"></i>
-            <span>Baurami Technologies</span>
-          </div>
-
-          <div class="contact-detail">
-            <i class="fas fa-clock"></i>
-            <span>Monday – Saturday</span>
-          </div>
         </div>
 
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="contactName">Your Name</label>
-            <input
-              type="text"
-              id="contactName"
-              name="name"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
+        <div class="projects-container">
 
-          <div class="form-group">
-            <label for="contactEmail">Email Address</label>
-            <input
-              type="email"
-              id="contactEmail"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
+            <article class="project-card">
 
-          <div class="form-group">
-            <label for="contactSubject">Subject</label>
-            <input
-              type="text"
-              id="contactSubject"
-              name="subject"
-              placeholder="Enter subject"
-              required
-            />
-          </div>
+                <div class="project-image">
+                    <img
+                        src="assets/hero.png"
+                        alt="Baurami business website project"
+                        loading="lazy"
+                    >
+                </div>
 
-          <div class="form-group">
-            <label for="contactMessage">Message</label>
-            <textarea
-              id="contactMessage"
-              name="message"
-              rows="5"
-              placeholder="Write your message..."
-              required
-            ></textarea>
-          </div>
+                <div class="project-content">
 
-          <button type="submit" class="btn btn-primary">
-            Send Message
-            <i class="fas fa-paper-plane"></i>
-          </button>
+                    <span class="project-category">Web Development</span>
 
-          <p
-            id="contactFormMessage"
-            class="form-message"
-            aria-live="polite"
-          ></p>
-        </form>
-      </div>
+                    <h3>Business Website</h3>
+
+                    <p>
+                        A modern business website with responsive
+                        layouts, attractive visuals and professional
+                        presentation for a better user experience.
+                    </p>
+
+                    <a href="#contact" class="project-link">
+                        Discuss a Similar Project
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    <img
+                        src="assets/services.png"
+                        alt="Digital services platform project"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-category">Digital Solutions</span>
+
+                    <h3>Digital Services Platform</h3>
+
+                    <p>
+                        A clean digital platform designed to present
+                        services, simplify navigation and improve
+                        customer engagement.
+                    </p>
+
+                    <a href="#contact" class="project-link">
+                        Discuss a Similar Project
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    <img
+                        src="assets/baurami-about-team.png"
+                        alt="Baurami creative technology team"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="project-content">
+
+                    <span class="project-category">Software Solutions</span>
+
+                    <h3>Creative Technology</h3>
+
+                    <p>
+                        Technology-focused solutions built around
+                        modern design, creative thinking and
+                        practical functionality.
+                    </p>
+
+                    <a href="#contact" class="project-link">
+                        Discuss a Similar Project
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </section>
+
+
+    <!-- PREMIUM LIGHT CONTACT SECTION -->
+
+    <section class="contact section-padding" id="contact">
+
+        <div class="contact-heading">
+
+            <span class="section-tag">LET'S CONNECT</span>
+
+            <h2>Have a Project in <span>Mind?</span></h2>
+
+            <p>
+                Have an idea, a question, or a project in mind?
+                We'd love to hear from you. Tell us a little about it
+                and let's start a conversation.
+            </p>
+
+        </div>
+
+        <div class="contact-container">
+
+            <!-- LEFT CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <span class="contact-label">GET IN TOUCH</span>
+
+                <h3>Let's make<br>something great.</h3>
+
+                <p class="contact-description">
+                    Every great digital experience starts with a conversation.
+                    Share what you're planning and the Baurami Technologies team
+                    will be glad to connect.
+                </p>
+
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+
+                        <span class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </span>
+
+                        <div>
+                            <h4>Our Company</h4>
+                            <p>Baurami Technologies</p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-detail">
+
+                        <span class="contact-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </span>
+
+                        <div>
+                            <h4>What's on your mind?</h4>
+                            <p>Projects, partnerships, or just a question — let's talk.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-note">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Thoughtful ideas. Meaningful digital experiences.</span>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT CONTACT FORM -->
+
+            <div class="contact-form-wrapper">
+
+                <div class="form-heading">
+
+                    <span class="form-small-tag">SEND A MESSAGE</span>
+
+                    <h3>Tell us about it</h3>
+
+                    <p>
+                        Fill in the details below and we'll take it from there.
+                    </p>
+
+                </div>
+
+                <form id="contactForm" class="contact-form">
+
+                    <div class="contact-form-row">
+
+                        <div class="form-group">
+
+                            <label for="contactName">Your Name</label>
+
+                            <input
+                                type="text"
+                                id="contactName"
+                                name="name"
+                                placeholder="Enter your name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="contactEmail">Email Address</label>
+
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="contactSubject">Subject</label>
+
+                        <input
+                            type="text"
+                            id="contactSubject"
+                            name="subject"
+                            placeholder="What would you like to discuss?"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="contactMessage">Your Message</label>
+
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us a little about your idea or project..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <button type="submit" class="contact-submit">
+                        Send Message
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <p id="contactFormMessage" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
     <!-- FOOTER -->
+
     <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-brand">
-          <a href="#home" class="logo">
-            <span class="logo-icon">B</span>
-            <span class="logo-text">
-              Baurami
-              <strong>Technologies</strong>
-            </span>
-          </a>
 
-          <p>
-            Innovating, building and growing through modern digital solutions.
-          </p>
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+                    <span class="logo-icon">B</span>
+
+                    <span class="logo-copy">
+                        <strong>Baurami<br><em>Technologies</em></strong>
+                        <small>INNOVATE · BUILD · GROW</small>
+                    </span>
+                </a>
+
+                <p>
+                    Building modern digital experiences
+                    through creativity and technology.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Account</h3>
+
+                <a href="signin.html">Sign In</a>
+                <a href="signup.html">Get Started</a>
+
+            </div>
+
         </div>
 
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+        <div class="footer-bottom">
+            <p>
+                © <span id="footerYear"></span>
+                Baurami Technologies. All rights reserved.
+            </p>
         </div>
 
-        <div class="footer-links">
-          <h3>Our Services</h3>
-          <a href="#services">Web Development</a>
-          <a href="#services">Mobile Applications</a>
-          <a href="#services">Software Development</a>
-          <a href="#services">UI/UX Design</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          © <span id="footerYear"></span>
-          Baurami Technologies. All rights reserved.
-        </p>
-      </div>
     </footer>
 
+
     <!-- BACK TO TOP -->
+
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- WEBSITE JAVASCRIPT -->
-    <script src="script.js"></script>
 
-    <!-- FIREBASE AUTHENTICATION STATE -->
+    <!-- EXISTING SCRIPTS -->
+
+    <script src="script.js"></script>
     <script type="module" src="js/auth-state.js"></script>
-  </body>
+
+</body>
 </html>

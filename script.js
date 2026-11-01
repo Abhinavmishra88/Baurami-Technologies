@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ==========================================
+    // =========================================
     // 1. FOOTER YEAR
-    // ==========================================
+    // =========================================
 
     const footerYear = document.getElementById("footerYear");
 
@@ -11,153 +11,112 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
+    // =========================================
     // 2. MOBILE NAVIGATION
-    // ==========================================
+    // =========================================
 
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
 
-    function closeMenu() {
-
+    const closeMenu = () => {
         if (!menuToggle || !navMenu) return;
 
         navMenu.classList.remove("active");
-
         menuToggle.setAttribute("aria-expanded", "false");
-
         menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-
-    }
+    };
 
     if (menuToggle && navMenu) {
 
-        menuToggle.setAttribute("aria-expanded", "false");
-
-        menuToggle.addEventListener("click", event => {
-
+        menuToggle.addEventListener("click", (event) => {
             event.stopPropagation();
 
             const isOpen = navMenu.classList.toggle("active");
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
 
             menuToggle.innerHTML = isOpen
                 ? '<i class="fas fa-times"></i>'
                 : '<i class="fas fa-bars"></i>';
-
         });
-
-
-        // Close menu after clicking navigation links
 
         navMenu.querySelectorAll("a").forEach(link => {
-
             link.addEventListener("click", closeMenu);
-
         });
 
-
-        // Close menu when clicking outside
-
-        document.addEventListener("click", event => {
-
+        document.addEventListener("click", (event) => {
             if (
                 !navMenu.contains(event.target) &&
                 !menuToggle.contains(event.target)
             ) {
                 closeMenu();
             }
-
         });
 
-
-        // Close menu when resizing to desktop
-
         window.addEventListener("resize", () => {
-
             if (window.innerWidth > 950) {
                 closeMenu();
             }
-
         });
-
     }
 
 
-    // ==========================================
-    // 3. SMOOTH SCROLLING
-    // ==========================================
-
-    const prefersReducedMotion =
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // =========================================
+    // 3. SMOOTH SCROLL
+    // =========================================
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-        link.addEventListener("click", event => {
+        link.addEventListener("click", (event) => {
 
-            const targetId = link.getAttribute("href");
+            const id = link.getAttribute("href");
 
-            if (!targetId || targetId === "#") return;
+            if (!id || id === "#") return;
 
-            const target = document.querySelector(targetId);
+            const target = document.querySelector(id);
 
             if (!target) return;
 
             event.preventDefault();
 
             target.scrollIntoView({
-
-                behavior: prefersReducedMotion ? "auto" : "smooth",
-
+                behavior: "smooth",
                 block: "start"
-
             });
-
         });
 
     });
 
 
-    // ==========================================
-    // 4. ACTIVE NAVIGATION
-    // ==========================================
+    // =========================================
+    // 4. ACTIVE NAVIGATION LINK
+    // =========================================
 
     const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-menu .nav-link");
 
-    const navLinks = document.querySelectorAll(
-        ".nav-menu .nav-link"
-    );
+    const updateActiveNavigation = () => {
 
-    function updateActiveNavigation() {
-
-        let currentSection = "";
-
-        const scrollPosition = window.scrollY + 160;
+        let current = "home";
 
         sections.forEach(section => {
 
-            if (scrollPosition >= section.offsetTop) {
-
-                currentSection = section.id;
-
+            if (section.getBoundingClientRect().top <= 150) {
+                current = section.id;
             }
 
         });
 
         navLinks.forEach(link => {
 
-            const isActive =
-                link.getAttribute("href") === `#${currentSection}`;
-
-            link.classList.toggle("active", isActive);
+            link.classList.toggle(
+                "active",
+                link.getAttribute("href") === `#${current}`
+            );
 
         });
 
-    }
+    };
 
     window.addEventListener("scroll", updateActiveNavigation, {
         passive: true
@@ -166,13 +125,13 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveNavigation();
 
 
-    // ==========================================
+    // =========================================
     // 5. HEADER SCROLL EFFECT
-    // ==========================================
+    // =========================================
 
     const header = document.querySelector(".header");
 
-    function updateHeader() {
+    const updateHeader = () => {
 
         if (!header) return;
 
@@ -181,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollY > 50
         );
 
-    }
+    };
 
     window.addEventListener("scroll", updateHeader, {
         passive: true
@@ -190,9 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateHeader();
 
 
-    // ==========================================
+    // =========================================
     // 6. BACK TO TOP BUTTON
-    // ==========================================
+    // =========================================
 
     const backToTop = document.getElementById("backToTop");
 
@@ -209,15 +168,11 @@ document.addEventListener("DOMContentLoaded", () => {
             passive: true
         });
 
-
         backToTop.addEventListener("click", () => {
 
             window.scrollTo({
-
                 top: 0,
-
-                behavior: prefersReducedMotion ? "auto" : "smooth"
-
+                behavior: "smooth"
             });
 
         });
@@ -225,9 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 7. CONTACT FORM
-    // ==========================================
+    // =========================================
+    // 7. CONTACT FORM VALIDATION
+    // =========================================
 
     const contactForm = document.getElementById("contactForm");
 
@@ -235,47 +190,37 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("contactFormMessage") ||
         document.getElementById("contactStatus");
 
-
-    function showContactStatus(message, type) {
+    const showContactStatus = (message, type) => {
 
         if (!contactStatus) return;
 
         contactStatus.textContent = message;
 
-        contactStatus.className = `form-message ${type}`;
+        contactStatus.className =
+            `contact-form-message ${type}`;
 
         contactStatus.setAttribute("role", "status");
 
-        contactStatus.setAttribute("aria-live", "polite");
-
-    }
-
+    };
 
     if (contactForm) {
 
-        contactForm.addEventListener("submit", event => {
+        contactForm.addEventListener("submit", (event) => {
 
             event.preventDefault();
 
+            const name =
+                document.getElementById("contactName")?.value.trim();
 
-            const name = document
-                .getElementById("contactName")
-                ?.value.trim();
+            const email =
+                document.getElementById("contactEmail")?.value.trim();
 
-            const email = document
-                .getElementById("contactEmail")
-                ?.value.trim();
+            const subject =
+                document.getElementById("contactSubject")?.value.trim();
 
-            const subject = document
-                .getElementById("contactSubject")
-                ?.value.trim();
+            const message =
+                document.getElementById("contactMessage")?.value.trim();
 
-            const message = document
-                .getElementById("contactMessage")
-                ?.value.trim();
-
-
-            // Required field validation
 
             if (!name || !email || !subject || !message) {
 
@@ -285,11 +230,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 return;
-
             }
 
-
-            // Email validation
 
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -301,11 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 return;
-
             }
 
-
-            // Message validation
 
             if (message.length < 10) {
 
@@ -315,39 +254,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 return;
-
             }
 
 
             // Frontend validation only.
-            // No email is sent until a backend or email service is connected.
+            // Email delivery requires a backend or email service.
+
+            console.log("Contact form submission:", {
+                name,
+                email,
+                subject,
+                message
+            });
 
             showContactStatus(
                 "Your details are valid! Email delivery has not been configured yet.",
                 "success"
             );
 
-            contactForm.reset();
-
         });
 
     }
 
 
-    // ==========================================
+    // =========================================
     // 8. SCROLL REVEAL ANIMATION
-    // ==========================================
+    // =========================================
 
     const revealElements = document.querySelectorAll(
         ".service-card, .project-card, .feature-card, .about-content"
     );
 
-
     if ("IntersectionObserver" in window) {
 
         const observer = new IntersectionObserver(
-
-            (entries, observerInstance) => {
+            (entries, instance) => {
 
                 entries.forEach(entry => {
 
@@ -355,20 +296,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         entry.target.classList.add("visible");
 
-                        observerInstance.unobserve(entry.target);
+                        instance.unobserve(entry.target);
 
                     }
 
                 });
 
             },
-
             {
                 threshold: 0.12
             }
-
         );
-
 
         revealElements.forEach(element => {
 
@@ -381,25 +319,21 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
 
         revealElements.forEach(element => {
-
             element.classList.add("visible");
-
         });
 
     }
 
 
-    // ==========================================
+    // =========================================
     // 9. CONSOLE MESSAGE
-    // ==========================================
+    // =========================================
 
     console.log(
         "%c BAURAMI TECHNOLOGIES ",
-        "background:#1769e8;color:white;padding:10px;border-radius:5px;font-weight:bold;"
+        "background:#0865f5;color:white;padding:10px;border-radius:5px;font-weight:bold;"
     );
 
-    console.log(
-        "Website JavaScript loaded successfully."
-    );
+    console.log("Website JavaScript loaded successfully.");
 
 });
