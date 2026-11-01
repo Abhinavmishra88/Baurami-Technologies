@@ -773,22 +773,7 @@ ul { list-style: none; }
     font-size: 12px;
     line-height: 1.9;
 }
-    width: 48px;
-    height: 48px;
-
-    display: grid;
-    place-items: center;
-
-    margin-bottom: 18px;
-
-    border-radius: 13px;
-
-    color: var(--primary);
-    background: var(--primary-light);
-
-    font-size: 20px;
-}
-
+    
 .feature-card h3 {
     margin-bottom: 9px;
     color: var(--dark);
@@ -944,7 +929,7 @@ ul { list-style: none; }
     padding: 65px 0 22px;
 
     color: #cbd6e8;
-    background: #14213d;
+    background: #182d5c;
 }
 
 .footer-container {
@@ -2673,7 +2658,7 @@ body {
 
 #contact .contact-form-wrapper h3 {
     margin: 9px 0 7px;
-    color: #142b4d;
+    color: #9eaabd;
     font-size: 27px;
     font-weight: 800;
     letter-spacing: -.5px;
